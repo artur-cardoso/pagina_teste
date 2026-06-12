@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supernosso | Alerta de Segurança</title>
+    <style>
+        :root {
+            --cor-azul: #2563eb;
+            --cor-azul-claro: #eff6ff;
+            --cor-texto: #1e293b;
+            --cor-suave: #64748b;
+            --sombra: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -3px rgba(0,0,0,0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 50%, #e0f2fe 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            max-width: 580px;
+            width: 100%;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--sombra);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .icone {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--cor-texto);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .subtitulo {
+            color: var(--cor-suave);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .caixa-dicas {
+            background: var(--cor-azul-claro);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: left;
+            border: 1px solid #bfdbfe;
+        }
+
+        .caixa-dicas h2 {
+            font-size: 1.1rem;
+            color: var(--cor-azul);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dica {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: var(--cor-texto);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .dica:last-child {
+            margin-bottom: 0;
+        }
+
+        .dica span {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        .btn-entendi {
+            background: var(--cor-azul);
+            color: white;
+            border: none;
+            padding: 0.9rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(37,99,235,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-entendi:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(37,99,235,0.25);
+        }
+
+        .rodape {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .divisor {
+            width: 60px;
+            height: 4px;
+            background: var(--cor-azul);
+            border-radius: 2px;
+            margin: 0.5rem auto 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icone">🛡️</div>
+        <h1>Este era um simulado de phishing</h1>
+        <p class="subtitulo">
+            Você participou de um teste de segurança interna promovido pela <strong>Supernosso</strong>.<br>
+            <strong>Fique tranquilo(a): seus dados não foram roubados.</strong>
+        </p>
+
+        <div class="divisor"></div>
+
+        <div class="caixa-dicas">
+            <h2>
+                <span>🔍</span> Como identificar e-mails falsos no futuro
+            </h2>
+            <div class="dica">
+                <span>📧</span>
+                <div><strong>Verifique o remetente:</strong> e-mails oficiais da Supernosso sempre terminam com <strong>@supernosso.com.br</strong>. Desconfie de domínios estranhos.</div>
+            </div>
+            <div class="dica">
+                <span>🔗</span>
+                <div><strong>Passe o mouse sobre links</strong> antes de clicar. O endereço real aparece no canto inferior do navegador.</div>
+            </div>
+            <div class="dica">
+                <span>⚠️</span>
+                <div><strong>Erros de português e urgência:</strong> mensagens que pedem ação imediata ou contêm erros grosseiros são suspeitas.</div>
+            </div>
+            <div class="dica">
+                <span>🔐</span>
+                <div><strong>Nunca forneça senhas</strong> em páginas que chegaram por links de e-mail. Acesse o site oficial manualmente.</div>
+            </div>
+        </div>
+
+        <a href="#" class="btn-entendi" id="btnVoltar">Entendi – Voltar para o site oficial</a>
+
+        <div class="rodape">
+            Em caso de dúvidas, entre em contato com o time de TI da Supernosso.<br>
+            Esta simulação faz parte do nosso programa contínuo de segurança digital.
+        </div>
+    </div>
+
+    <script>
+        // Redireciona para um site real (ou apenas fecha a ideia)
+        document.getElementById('btnVoltar').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Altere para o site oficial da Supernosso ou uma página de obrigado
+            window.location.href = 'https://www.supernosso.com.br'; // ou qualquer URL segura
+        });
+    </script>
+</body>
+</html>
